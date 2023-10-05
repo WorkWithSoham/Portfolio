@@ -1,0 +1,11 @@
+.projects hr {
+    margin: 0.5rem;
+}
+
+.projects .MuiCardContent-root {
+    padding: 8px;
+}
+
+.projects .MuiCardContent-root:last-child {
+    padding: 12px;
+}

@@ -1,0 +1,14 @@
+.contactForm h6 {
+    font-family: 'Merienda', cursive;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.MuiTextField-root ::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.MuiTextField-root {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}

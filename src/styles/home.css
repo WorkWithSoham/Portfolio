@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda&display=swap');
+
+.home h4 {
+    font-family: 'Merienda', cursive;
+}
+
+.resumeBtn {
+    font-weight: bold;
+    color: rgba(217, 231, 245, 0.92);
+    background-color: rgba(33, 38, 45, 0.8);
+    border-color: rgba(60, 66, 75, 0.86);
+}
+
+.resumeBtn:hover {
+    border-color: rgba(139, 148, 158, 0.94);
+    background-color: rgba(48, 54, 61, 0.93);
+}

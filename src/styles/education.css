@@ -1,0 +1,19 @@
+.education {
+    background-size: contain;
+    margin: auto;
+    position: relative;
+}
+
+.education img {
+    height: 90%;
+    width: 90%;
+}
+
+.education .MuiPaper-rounded {
+    border-radius: 2vh;
+}
+
+.education .MuiPaper-root {
+    /*background-image: url('/src/static/uta_logo_edu.png');*/
+    background: linear-gradient(to left, transparent, #383838 100%);
+}
