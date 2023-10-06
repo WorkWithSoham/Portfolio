@@ -61,7 +61,7 @@ export const Contact = () => {
                         <TextField
                             className="m-2"
                             id="full_name"
-                            //required
+                            required
                             fullWidth
                             label="Full Name"
                             variant="filled"
@@ -73,7 +73,7 @@ export const Contact = () => {
                         <TextField
                             className="m-2"
                             id="email"
-                            //required
+                            required
                             fullWidth
                             label="Email"
                             variant="filled"
@@ -85,7 +85,7 @@ export const Contact = () => {
                         <TextField
                             className="m-2"
                             id="subject"
-                            //required
+                            required
                             fullWidth
                             label="Subject"
                             variant="filled"
