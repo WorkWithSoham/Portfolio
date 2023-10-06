@@ -1,6 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "homepage": "https://workwithsoham.github.io/Portfolio",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.11.1",
@@ -27,6 +28,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d builder",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -52,6 +55,7 @@
   },
   "devDependencies": {
     "@types/node": "^20.8.0",
-    "@types/pdfjs-dist": "^2.10.378"
+    "@types/pdfjs-dist": "^2.10.378",
+    "gh-pages": "^6.0.0"
   }
 }
