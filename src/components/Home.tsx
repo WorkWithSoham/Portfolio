@@ -2,7 +2,7 @@ import React from "react";
 
 import "../styles/home.css"
 
-import {clipart} from "../utils";
+import {clipart} from "../utils/utils";
 
 export const Home = () => {
 

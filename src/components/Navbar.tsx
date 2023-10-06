@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {st_logo} from "../utils"
+import {st_logo} from "../utils/utils"
 
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';

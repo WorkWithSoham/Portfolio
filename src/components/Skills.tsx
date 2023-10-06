@@ -20,7 +20,7 @@ import {
     react, angular, django, nodejs, spring,
     mongo, mysql, oracledb, psql,
     docker, git, dbeaver, postman, jira
-} from "../utils";
+} from "../utils/utils";
 
 
 export const Skills = () => {

@@ -2,7 +2,7 @@ import React from "react";
 
 import {getPdfURL} from "../types.s";
 
-import {dp, github, insta, linkedin, leetcode} from "../utils";
+import {dp, github, insta, linkedin, leetcode} from "../utils/utils";
 
 import "../styles/greeting.css"
 

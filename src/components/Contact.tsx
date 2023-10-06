@@ -1,4 +1,4 @@
-import React, {FormEvent} from "react";
+import React, {FormEvent, useState} from "react";
 import "../styles/contact.css"
 
 import Typography from "@mui/material/Typography";
@@ -7,80 +7,34 @@ import TextField from '@mui/material/TextField';
 import SendIcon from '@mui/icons-material/Send';
 import Button from "@mui/material/Button";
 import {Form} from "react-bootstrap";
+import Alert from '@mui/material/Alert';
+
+import {githubAPI} from "../utils/githubAPI";
+
+export interface UserResponse {
+    full_name: string,
+    email: string,
+    subject: string,
+    message: string
+}
 
 export const Contact = () => {
-
-    const owner = "workwithsoham";
-    const repo = "your-repo-name";
-    const branch = "your-branch-name";
-    const pathToFile = "path/to/your/file.txt";
-    const token = "your-personal-access-token";
+    const [alert, setAlert] = useState<Boolean>(false)
 
     const onSend = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const data = {
+        const data: UserResponse = {
             full_name: event.currentTarget.full_name.value,
             email: event.currentTarget.email.value,
             subject: event.currentTarget.subject.value,
             message: event.currentTarget.message.value
         }
 
-        fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${pathToFile}`, {
-            headers: {
-                Authorization: `token ${token}`,
-            },
-        })
-            .then((response) => response.json())
-            .then((data) => {
-                // Decode and modify the file content
-                const content = atob(data.content); // Decode base64 content
-                const updatedContent = content + "\nUser Input: " + data;
-
-                // Create a new commit
-                fetch(`https://api.github.com/repos/${owner}/${repo}/git/commits`, {
-                    method: "POST",
-                    headers: {
-                        Authorization: `token ${token}`,
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        message: "Update file with user input",
-                        content: btoa(updatedContent), // Encode back to base64
-                        sha: data.sha, // Use the SHA from the original content
-                        branch: branch,
-                    }),
-                })
-                    .then((response) => response.json())
-                    .then((commitData) => {
-                        // Update the branch reference
-                        fetch(`https://api.github.com/repos/${owner}/${repo}/git/refs/heads/${branch}`, {
-                            method: "PATCH",
-                            headers: {
-                                Authorization: `token ${token}`,
-                                "Content-Type": "application/json",
-                            },
-                            body: JSON.stringify({
-                                sha: commitData.sha,
-                            }),
-                        })
-                            .then((response) => response.json())
-                            .then((updatedRefData) => {
-                                console.log("File updated successfully.");
-                            })
-                            .catch((error) => {
-                                console.error("Error updating branch reference:", error);
-                            });
-                    })
-                    .catch((error) => {
-                        console.error("Error creating commit:", error);
-                    });
+        githubAPI(data)
+            .then(r => {
+                setAlert(true);
             })
-            .catch((error) => {
-                console.error("Error fetching file content:", error);
-            });
-
-        console.log(data)
 
         event.currentTarget.reset();
 
@@ -88,6 +42,10 @@ export const Contact = () => {
 
     return (
         <div className="mx-auto contactForm">
+            {alert && <Alert onClose={() => {
+                setAlert(false)
+            }}>Thank you for your message! :)</Alert>}
+
             <Typography variant="h5" align="center" sx={{fontWeight: "bold"}}>
                 Contact Me
             </Typography>
@@ -103,7 +61,7 @@ export const Contact = () => {
                         <TextField
                             className="m-2"
                             id="full_name"
-                            required
+                            //required
                             fullWidth
                             label="Full Name"
                             variant="filled"
@@ -115,7 +73,7 @@ export const Contact = () => {
                         <TextField
                             className="m-2"
                             id="email"
-                            required
+                            //required
                             fullWidth
                             label="Email"
                             variant="filled"
@@ -127,7 +85,7 @@ export const Contact = () => {
                         <TextField
                             className="m-2"
                             id="subject"
-                            required
+                            //required
                             fullWidth
                             label="Subject"
                             variant="filled"

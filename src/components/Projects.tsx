@@ -6,7 +6,7 @@ import {Card} from "@mui/material";
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 
-import * as utils from "../utils";
+import * as utils from "../utils/utils";
 import Avatar from "@mui/material/Avatar";
 import Stack from "@mui/material/Stack";
 import GitHubIcon from '@mui/icons-material/GitHub';

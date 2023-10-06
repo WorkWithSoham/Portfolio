@@ -5,7 +5,7 @@ import SchoolIcon from '@mui/icons-material/School';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 
-import {uta, si} from "../utils"
+import {uta, si} from "../utils/utils"
 
 export const Education = () => {
 

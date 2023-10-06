@@ -10,7 +10,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import Paper from "@mui/material/Paper";
 
-import {dematic, owl} from "../utils"
+import {dematic, owl} from "../utils/utils"
 
 export const Experience = () => {
 
