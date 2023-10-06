@@ -4,10 +4,10 @@ import {UserResponse} from "../components/Contact";
 
 export const githubAPI = async (content: UserResponse) => {
 
-    const octokit = new Octokit({auth: `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`});
+    const octokit = new Octokit({auth: `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`});
     const owner: string = "WorkWithSoham";
     const repo: string = "Portfolio";
-    const path: string = "UserResponse.json"
+    const path: string = "UserResponse.json";
 
     const getFileSHA: OctokitResponse<any> = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
         owner: owner,
@@ -21,11 +21,12 @@ export const githubAPI = async (content: UserResponse) => {
     const oldContent: UserResponse[] = JSON.parse(atob(getFileSHA.data.content))
     oldContent.push(content)
 
+
     await octokit.request('PUT /repos/{owner}/{repo}/contents/{path}', {
         owner: owner,
         repo: repo,
         path: path,
-        message: 'Test response',
+        message: 'Updated User Response at ' + new Date().toISOString(),
         content: btoa(JSON.stringify(oldContent, null, 4)),
         sha: getFileSHA.data.sha,
         headers: {
