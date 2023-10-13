@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.46a6b8f2.css",
-    "main.js": "/static/js/main.c2cf6f12.js",
+    "main.css": "/static/css/main.aad59a66.css",
+    "main.js": "/static/js/main.2b54c567.js",
     "static/media/myPic.png": "/static/media/myPic.4dbaf1035d129ad906b5.png",
     "static/media/adnroid_studio.png": "/static/media/adnroid_studio.73bd6c19e6b30c4db65b.png",
     "static/media/nodejs.png": "/static/media/nodejs.aa8bc616bb8252fa29f3.png",
-    "static/media/navbar_st_logo.png": "/static/media/navbar_st_logo.2d1c3afb7247854f5bda.png",
     "static/media/css.png": "/static/media/css.19c8605d6b2861f5fbe0.png",
     "static/media/uta_logo_edu.png": "/static/media/uta_logo_edu.9c7578048f84ccaf8169.png",
+    "static/media/navbar_st_logo.png": "/static/media/navbar_st_logo.221720bc2a5e20216437.png",
     "static/media/owl_logo.png": "/static/media/owl_logo.cc212c66c7d7822fcb76.png",
     "static/media/java.jpg": "/static/media/java.67926e23019e6d28697b.jpg",
     "static/media/giphy.gif": "/static/media/giphy.4b806f08978aa556718d.gif",
@@ -15,6 +15,7 @@
     "static/media/spring.png": "/static/media/spring.6c108308ef2baec1c7b8.png",
     "static/media/insta_logo.png": "/static/media/insta_logo.0040b8228c6f43bf43a1.png",
     "static/media/psql.png": "/static/media/psql.adf06069931bb097aad1.png",
+    "static/media/slogan.png": "/static/media/slogan.e0a41709e9a455395ea1.png",
     "static/media/graphql.png": "/static/media/graphql.aeaf34bbaeb405d851db.png",
     "static/media/si-logo.png": "/static/media/si-logo.59bc9f9734bb0c6c6c84.png",
     "static/media/postman.png": "/static/media/postman.926b2d9ae11a8445a05a.png",
@@ -30,11 +31,11 @@
     "static/media/dematic_logo.svg": "/static/media/dematic_logo.3cfe04d5268d2391c4639e1d1d034135.svg",
     "static/media/ts.svg": "/static/media/ts.22b4f22ec3ee32c08fb2c0a25682bb5b.svg",
     "index.html": "/index.html",
-    "main.46a6b8f2.css.map": "/static/css/main.46a6b8f2.css.map",
-    "main.c2cf6f12.js.map": "/static/js/main.c2cf6f12.js.map"
+    "main.aad59a66.css.map": "/static/css/main.aad59a66.css.map",
+    "main.2b54c567.js.map": "/static/js/main.2b54c567.js.map"
   },
   "entrypoints": [
-    "static/css/main.46a6b8f2.css",
-    "static/js/main.c2cf6f12.js"
+    "static/css/main.aad59a66.css",
+    "static/js/main.2b54c567.js"
   ]
 }
