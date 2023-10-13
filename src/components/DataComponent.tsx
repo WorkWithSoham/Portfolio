@@ -22,16 +22,6 @@ import TabPanel from "@mui/lab/TabPanel";
 import TabContext from "@mui/lab/TabContext";
 
 
-const verticalAlignStyle: React.CSSProperties = {
-    alignItems: "center",
-    borderStyle: 'solid',
-    borderWidth: '0.01px',
-    borderColor: 'grey',
-    minHeight: '78vh',
-    maxHeight: '78vh',
-    overflowY: 'scroll'
-}
-
 export const DataComponent = () => {
     const [value, setValue] = React.useState('1');
 
@@ -46,6 +36,8 @@ export const DataComponent = () => {
                     <Tabs
                         className="mx-5"
                         value={value}
+                        variant="scrollable"
+                        scrollButtons={false}
                         onChange={handleChange}
                         textColor="inherit"
                         TabIndicatorProps={{style: {background: '#f78166'}}}

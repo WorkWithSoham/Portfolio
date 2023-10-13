@@ -53,3 +53,7 @@
 .greeting hr {
     margin-left: 2rem;
 }
+
+.websiteLink :hover {
+    cursor: pointer;
+}

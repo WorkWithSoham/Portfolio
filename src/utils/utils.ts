@@ -34,6 +34,7 @@ import st_logo from "../static/logos/navbar_st_logo.png"
 import owl from "../static/logos/owl_logo.png"
 import si from "../static/logos/si-logo.png"
 import uta from "../static/logos/uta_logo_edu.png"
+import slogan from "../static/logos/slogan.png"
 
 // random/ clipart
 
@@ -77,7 +78,8 @@ export {
     gif,
     dp,
     androidStudio,
-    laravel
+    laravel,
+    slogan
 }
 
 

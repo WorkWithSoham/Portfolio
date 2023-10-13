@@ -26,7 +26,7 @@ import {
 export const Skills = () => {
 
     return (
-        <div className="skills animate__animated animate__pulse">
+        <div className="container skills animate__animated animate__pulse">
             <h5 className="m-3 mb-5">I bring expertise in Web Development, Software Engineering, and Database Management
                 to create visually stunning and user-friendly online experiences.</h5>
             <Accordion>
