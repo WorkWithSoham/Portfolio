@@ -4,7 +4,7 @@ import {UserResponse} from "../components/Contact";
 
 export const githubAPI = async (content: UserResponse) => {
 
-    const octokit = new Octokit({auth: `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`});
+    const octokit = new Octokit({auth: `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`});
     const owner: string = "WorkWithSoham";
     const repo: string = "Portfolio";
     const path: string = "UserResponse.json";
