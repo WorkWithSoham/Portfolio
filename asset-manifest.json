@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.aad59a66.css",
-    "main.js": "/static/js/main.2b54c567.js",
+    "main.js": "/static/js/main.95716961.js",
     "static/media/myPic.png": "/static/media/myPic.4dbaf1035d129ad906b5.png",
     "static/media/adnroid_studio.png": "/static/media/adnroid_studio.73bd6c19e6b30c4db65b.png",
     "static/media/nodejs.png": "/static/media/nodejs.aa8bc616bb8252fa29f3.png",
@@ -32,10 +32,10 @@
     "static/media/ts.svg": "/static/media/ts.22b4f22ec3ee32c08fb2c0a25682bb5b.svg",
     "index.html": "/index.html",
     "main.aad59a66.css.map": "/static/css/main.aad59a66.css.map",
-    "main.2b54c567.js.map": "/static/js/main.2b54c567.js.map"
+    "main.95716961.js.map": "/static/js/main.95716961.js.map"
   },
   "entrypoints": [
     "static/css/main.aad59a66.css",
-    "static/js/main.2b54c567.js"
+    "static/js/main.95716961.js"
   ]
 }
