@@ -48,15 +48,15 @@ export const Projects = () => {
         },
         {
             name: "Eel Python Sudoku",
-            desc: "It is an extension to the browsers which can keep a record of the applications you have done using the browser.",
+            desc: "Sudoku generator and solver desktop app, designed using Eel library in python and javascript.",
             github: "https://github.com/WorkWithSoham/Job-Application-Tracker-Chrome-Extension",
-            tools: [utils.java, utils.react, utils.mysql, utils.spring]
+            tools: [utils.js, utils.python]
         },
         {
-            name: "Job Application Tracker",
-            desc: "It is an extension to the browsers which can keep a record of the applications you have done using the browser.",
+            name: "MERN Stack Social Media",
+            desc: "Designed a twitter-like social media website using the MERN stack. Users can signup to create interactive posts",
             github: "https://github.com/WorkWithSoham/Job-Application-Tracker-Chrome-Extension",
-            tools: [utils.java, utils.react, utils.mysql, utils.spring]
+            tools: [utils.mongo, utils.react, utils.nodejs]
         },
     ]
 
