@@ -1,40 +1,21 @@
-import React from 'react';
-import './styles/App.css';
-import {ThemeProvider, createTheme} from '@mui/material/styles';
+import {CustomNavbar} from "./components/HTMLComponents/CustomNavbar.tsx";
+import {DataComponent} from "./components/DataComponent.tsx";
+import {MyInfo} from "./components/MyInfo.tsx";
 
-import {Navbar} from './components/Navbar'
-import {Greeting} from "./components/Greeting";
-import {DataComponent} from "./components/DataComponent";
-
-
-const darkTheme = createTheme({
-    palette: {
-        mode: 'dark',
-        primary: {
-            main: "rgba(173,197,222,0.73)"
-        }
-    },
-});
-
-function App() {
+export default function App() {
 
     return (
-        <div className="App">
-            <ThemeProvider theme={darkTheme}>
-                <Navbar/>
-                <div className="container-xxl text-center">
-                    <div className="row row-cols-xl-auto">
-                        <div className="col-xl-3 col-md-3 col-12 p-0 m-0">
-                            <Greeting/>
-                        </div>
-                        <div className="col-xl-9 col-md-9 col-12 m-0 p-0">
-                            <DataComponent/>
-                        </div>
-                    </div>
+        <div className="bg-bkg w-full h-full 2xl:h-screen overflow-y-scroll">
+            <CustomNavbar/>
+            <div className="2xl:w-[70%] p-8 mx-auto h-full w-auto justify-center lg:flex">
+                <div className="mx-auto p-3 lg:w-[28%] h-full w-full">
+                    <MyInfo/>
                 </div>
-            </ThemeProvider>
+                <div className="mx-auto mt-10 xl:mt-2 xl:p-8 lg:w-[85%] h-full w-full 2xl:ml-10">
+                    <DataComponent/>
+                </div>
+            </div>
         </div>
-    );
+    )
 }
 
-export default App;

@@ -1,8 +1,8 @@
 import {Octokit} from "octokit";
 import {OctokitResponse} from "@octokit/types";
-import {UserResponse} from "../components/Contact";
+import {FormData} from "../components/Contact";
 
-export const githubAPI = async (content: UserResponse) => {
+export const githubAPI = async (content: FormData) => {
 
     const octokit = new Octokit({auth: `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`});
     const owner: string = "WorkWithSoham";
@@ -18,7 +18,7 @@ export const githubAPI = async (content: UserResponse) => {
         }
     })
 
-    const oldContent: UserResponse[] = JSON.parse(atob(getFileSHA.data.content))
+    const oldContent: FormData[] = JSON.parse(atob(getFileSHA.data.content))
     oldContent.push(content)
 
 

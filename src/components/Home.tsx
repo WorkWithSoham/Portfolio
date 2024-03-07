@@ -1,18 +1,19 @@
-import React from "react";
+import {HomeData} from "../data/HomeData.ts";
 
-import "../styles/home.css"
-
-import {clipart} from "../utils/utils";
 
 export const Home = () => {
 
     return (
-        <div className="home">
-            <img className="img-fluid animate__animated animate__fadeInRight" src={clipart} alt="clipart"
-                 height="60%" width="60%"/>
-            <h4 className="m-5 mb-3">My strong passion is all about creating solutions that go beyond just technology. I want
-                to empower and transform things, and I use code as my tool for making that happen. I'm dedicated to
-                making myself better by solving problems and making my work smarter, simpler, and more impactful.</h4>
+        <div className="w-full items-center justify-center p-4">
+            <img src={HomeData.clipart}
+                 className="mx-auto xl:mt-5 h-28 w-52 xl:w-96 xl:h-52 animate__animated animate__slideInRight"
+                 alt="clipart"/>
+            <blockquote
+                className="p-4 my-4 text-primary/70 mx-auto font-serif">
+                <p className="text-sm mx-2 mt-4 lg:text-xl xl:text-[1.5rem] italic xl:mt-6 xl:mx-20 leading-relaxed">
+                    {HomeData.about}
+                </p>
+            </blockquote>
         </div>
-    );
+    )
 }

@@ -1,67 +1,43 @@
+import {EducationData, University} from "../data/EducationData.ts";
 import React from "react";
-
-import "../styles/education.css";
-import SchoolIcon from '@mui/icons-material/School';
-import Paper from '@mui/material/Paper';
-import Button from '@mui/material/Button';
-
-import {uta, si} from "../utils/utils"
 
 export const Education = () => {
 
     return (
-        <div className="education mx-auto">
-            <div className="mx-auto text-start px-2">
-                <Paper elevation={24} color="none" className="m-2 mt-1 p-3 schoolBackground animate__animated animate__backInDown">
-                    <div className='row'>
-                        <div className='col-8 mx-auto'>
-                            <h5><SchoolIcon fontSize='large' className='mx-2'/>M.S. in Computer Science</h5>
-                            <h5 className="mt-2">The University of Texas at Arlington</h5>
-                            <ul className="mt-2">
-                                <li>Data Structures and Algorithms</li>
-                                <li>Big Data and Cloud Computing</li>
-                                <li>Advanced Software Engineering</li>
-                                <li>Web Data Management</li>
-                            </ul>
-                            <Button variant="outlined" color="primary" onClick={() => {
-                                window.open('https://www.uta.edu/', '_blank');
-                            }}>Website</Button>
+        <div className="flex flex-col m-2 xl:flex-row h-full my-auto">
+            {
+                EducationData.map((u: University, idx: number): React.JSX.Element => {
+                    return (
+                        <div key={idx}
+                             className="lg:w-full 2xl:h-auto max-h-[85%] m-2 xl:m-4 bg-accent/70 border border-secondary/50 rounded-lg
+                             animate__animated animate__fadeIn">
+                            <img src={u.logo} className="h-32 w-36 my-3 mx-auto" alt="UTA Logo"/>
+                            <div className="flex flex-col w-full text-center text-primary p-2 mx-auto">
+                                <h1 className="text-lg font-extrabold">{u.name}</h1>
+                                <p className="text-base  mt-2">{u.degree}</p>
+                                <ul className="list-disc list-inside my-3 xl:m-4 text-xs">
+                                    {
+                                        u.subjects.map((sub: string, idx: number) => {
+                                            return (
+                                                <li key={idx}>{sub}</li>
+                                            )
+                                        })
+                                    }
+                                </ul>
+                                <br/>
+                                <button type="button"
+                                        className="mx-auto m-2 p-2 xl:w-1/2 border-[1px] border-secondary rounded-md bg-accent/10 hover:bg-accent/50"
+                                        onClick={() => {
+                                            window.open(u.link, '_blank')
+                                        }}
+                                >
+                                    Website
+                                </button>
+                            </div>
                         </div>
-
-                        <div className='col-4 mx-auto text-center'>
-                            <p>2021 - 2023</p>
-                            <img src={uta} alt="UTA logo" className="p-2 img-fluid"/>
-                        </div>
-
-                    </div>
-                </Paper>
-
-                <Paper elevation={24} color="none" className="m-2 mb-1 p-3 schoolBackground animate__animated animate__backInUp">
-                    <div className='row'>
-                        <div className='col-8 mx-auto'>
-                            <h5 style={{display: 'inline'}}><SchoolIcon fontSize='large' className='mx-2'/>B.E. in
-                                Electronics &
-                                Telecom</h5>
-                            <h5 className="mt-2">S.K.N. College of Engineering</h5>
-                            <ul className="mt-2">
-                                <li>Advanced Mathematics</li>
-                                <li>Computer Network</li>
-                                <li>Object Oriented Programming</li>
-                            </ul>
-                            <Button variant="outlined" color="primary" onClick={() => {
-                                window.open('http://cms.sinhgad.edu/sinhgad_engineering_institutes/skncoe_vadgaon/institute_details.aspx', '_blank');
-                            }}>
-                                Website
-                            </Button>
-                        </div>
-
-                        <div className='col-4 mx-auto text-center'>
-                            <p>2017 - 2021</p>
-                            <img src={si} alt="UTA logo" className="p-2 img-fluid"/>
-                        </div>
-                    </div>
-                </Paper>
-            </div>
+                    )
+                })
+            }
         </div>
     )
 }

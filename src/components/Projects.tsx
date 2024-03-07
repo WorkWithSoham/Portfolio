@@ -1,117 +1,58 @@
-import React from "react";
-
-import "../styles/projects.css"
-
-import {Card} from "@mui/material";
-import CardContent from '@mui/material/CardContent';
-import Typography from '@mui/material/Typography';
-
-import * as utils from "../utils/utils";
-import Avatar from "@mui/material/Avatar";
-import Stack from "@mui/material/Stack";
-import GitHubIcon from '@mui/icons-material/GitHub';
-import Button from "@mui/material/Button";
-
-
-interface project {
-    name: string,
-    desc: string,
-    github?: string,
-    tools: string[]
-}
+import {project, projects} from "../data/ProjectsData.ts";
+import {tool} from "../data/Tools.ts";
+import Tooltip from "./HTMLComponents/Tooltip.tsx";
 
 export const Projects = () => {
 
-    const projects: project[] = [
-        {
-            name: "Job Application Tracker",
-            desc: "Developed an extension to the browsers which dynamically compiles a list of all the applications submitted.",
-            github: "https://github.com/WorkWithSoham/Job-Application-Tracker-Chrome-Extension",
-            tools: [utils.java, utils.react, utils.mysql, utils.spring]
-        },
-        {
-            name: "Lost It, Found It",
-            desc: "Designed an android app for UTA students to report or claim lost items on campus.",
-            github: "https://github.com/WorkWithSoham/Lost-It-Found-it-",
-            tools: [utils.java, utils.androidStudio]
-        },
-        {
-            name: "Store Management System",
-            desc: "Created a dashboard using React to allow CRUD operations on the OracleDB populated with 12500+ entries across 12 BCNF normalized tables.",
-            tools: [utils.react, utils.sql, utils.oracledb]
-        },
-        {
-            name: "Siremar",
-            desc: "Built a city management system as an academic project using React, Laravel and MySQL.",
-            github: "https://github.com/WorkWithSoham/Siremar-React-Laravel",
-            tools: [utils.react, utils.laravel, utils.mysql, utils.html, utils.css]
-        },
-        {
-            name: "Eel Python Sudoku",
-            desc: "Sudoku generator and solver desktop app, designed using Eel library in python and javascript.",
-            github: "https://github.com/WorkWithSoham/Job-Application-Tracker-Chrome-Extension",
-            tools: [utils.js, utils.python]
-        },
-        {
-            name: "MERN Stack Social Media",
-            desc: "Designed a twitter-like social media website using the MERN stack. Users can signup to create interactive posts",
-            github: "https://github.com/WorkWithSoham/Job-Application-Tracker-Chrome-Extension",
-            tools: [utils.mongo, utils.react, utils.nodejs]
-        },
-    ]
 
     return (
-        <div className="row projects">
-
+        <div className="h-full grid grid-cols-1 xl:grid-cols-3 my-auto">
             {
-                projects.map((project) => {
+                projects.map((project: project, idx: number) => {
+
                     return (
-                        <div className="m-2 mx-auto col-lg-4 animate__animated animate__flipInX">
-                            <Card variant="outlined" raised
-                                  sx={{background: "rgba(29,34,42,0.34)"}}>
-                                <CardContent>
-                                    <Typography variant="subtitle1" color="text.secondary" fontWeight="bold"
-                                                component="div" fontSize={17}>
-                                        {project.name}
-                                    </Typography>
-                                    <hr/>
-                                    <Typography variant="body2" fontSize={13} color="text.secondary" gutterBottom>
-                                        {project.desc}
-                                    </Typography>
-                                    <hr/>
-                                    <Stack direction="row" className="m-1 mx-auto" spacing={1.5} alignItems="center"
-                                           justifyContent="center">
-                                        {
-                                            project.tools.map((tool) => {
-                                                return (
-                                                    <Avatar alt="ToolName" src={tool} sx={{width: 30, height: 30}}/>
-                                                )
-                                            })
-                                        }
-                                    </Stack>
-                                    <hr/>
-                                    {project.github && <Button variant="outlined" color="primary" size="small"
-                                                               startIcon={<GitHubIcon/>}
-                                                               onClick={() => {
-                                                                   window.open(`${project.github}`, '_blank');
-                                                               }}>
-                                        View
-                                    </Button>}
-                                </CardContent>
-                            </Card>
+                        <div
+                            key={idx.toString()}
+                            className="my-2 mx-4 lg:p-4 text-center text-primary
+                            border border-secondary/40 min-h-48 h-auto xl:w-auto
+                            animate__animated animate__zoomIn
+                            ">
+                            <h4 className="font-bold text-sm border-b border-secondary/40 pb-2 lg:pb-4 mx-1 2xl:text-base">{project.name}</h4>
+                            <p className="text-xs mt-2 border-b border-secondary/40 pb-2 lg:pb-4">{project.desc}</p>
+                            <div
+                                className="inline-flex justify-center grid-cols-2 w-full border-b border-secondary/40">
+                                {
+                                    project.tools.map((tool: tool, idx: number) => {
+                                        return (
+                                            <Tooltip message={tool.name}
+                                                     key={idx.toString()}>
+                                                <img
+                                                    className="justify-center p-0.5 w-10 h-10 rounded-full border-[1px] cursor-pointer
+                                                               border-t-slate-400 border-l-slate-400 border-b-slate-700 border-r-slate-700"
+                                                    src={tool.pic}
+                                                    alt={tool.name}
+                                                    onClick={() => {
+                                                        window.open(tool.link, '_blank')
+                                                    }}/>
+                                            </Tooltip>
+                                        )
+                                    })
+                                }
+                            </div>
+                            {project.github ? <a
+                                className="px-3 py-2 w-1/3 text-sm text-center inline-flex justify-center
+                    bg-slate-700/50 my-4 border-[1px] border-primary/40 text-primary/80 rounded-md
+                    hover:bg-slate-400/50"
+                                type="button"
+                                href={project.github}
+                                target="_blank"
+                            >
+                                <span>View</span>
+                            </a> : <></>}
                         </div>
                     )
                 })
             }
-
-            <Button variant="outlined" sx={{width: "30%", marginX: "auto", marginTop: "0.5rem"}} color="primary" size="small"
-                    startIcon={<GitHubIcon/>}
-                    onClick={() => {
-                        window.open("https://github.com/WorkWithSoham?tab=repositories", '_blank');
-                    }}>
-                More Projects
-            </Button>
-
         </div>
     )
 }
