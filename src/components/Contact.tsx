@@ -14,29 +14,19 @@ export const Contact = () => {
 
     const [alert, setAlert] = useState(false)
 
-    const [formData, setFormData] = useState<FormData>({
-        name: "",
-        subject: "",
-        email: "",
-        message: ""
-    })
-
     const formSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         const target = e.currentTarget
 
-        setFormData({
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-expect-error
-            name: target.name.value,
+        const data: FormData = {
+            name: target.fname.value,
             subject: target.subject.value,
             email: target.email.value,
             message: target.message.value,
-        })
+        }
 
-        console.log(formData)
 
-        githubAPI(formData)
+        githubAPI(data)
             .then(() => {
                 setAlert(true);
             })
@@ -67,7 +57,7 @@ export const Contact = () => {
                     className="rounded-md lg:w-2/3 h-12 m-3 bg-accent/30"
                     type="text"
                     placeholder="Name"
-                    name="name"/>
+                    name="fname"/>
                 <input
                     required={true}
                     className="rounded-md lg:w-2/3 h-12 m-3 bg-accent/30"
