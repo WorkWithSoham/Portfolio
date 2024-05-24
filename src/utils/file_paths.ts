@@ -42,7 +42,7 @@ import slogan_light from "../assets/logos/slogan_light.png"
 
 import clipart from "../assets/randoms/clipArt.png"
 import gif from "../assets/randoms/giphy.gif"
-import dp from "../assets/randoms/myPic.png"
+import dp from "../assets/randoms/my_pic.png"
 
 export {
     angular,
