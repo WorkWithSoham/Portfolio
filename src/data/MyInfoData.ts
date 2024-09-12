@@ -8,7 +8,7 @@ export const MyInfoData = {
     insta: insta,
     linkedin: linkedin,
     leetcode: leetcode,
-    location: "Arlington, Texas, USA",
+    location: "United States",
     email: "sohamtembe98@gmail.com",
     links: {
         github: "https://github.com/WorkWithSoham",
